@@ -5,12 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Contact Us</title>
-<link rel="stylesheet" type="text/css" href="./contactUs.css">
+<link rel="stylesheet" type="text/css" href="./CSS/contactUs.css">
+<script src="./modalScript.js"></script> <!-- Link to external JavaScript file -->
+
 <!-- Link to external CSS -->
 </head>
 <body>
 
 	<%@ include file="navbar.jsp"%>
+	<%@ include file="loginModal.jsp"%>
+	<%@ include file="registerModal.jsp"%>
 
 	<div class="social-icons">
 		<!-- Instagram Icon -->
