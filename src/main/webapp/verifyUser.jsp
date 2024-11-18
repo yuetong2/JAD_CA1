@@ -24,7 +24,6 @@
 	String password = request.getParameter("password");
 
 	String userRole = "";
-	String username = "";
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		// Step 2: Define Connection URL

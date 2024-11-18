@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@ page import="java.sql.*" %>
+<%@ page import="dbConnection.DatabaseConnection" %>
 
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Update Service</title>
+    <meta charset="UTF-8">
+    <title>Update Service</title>
 </head>
 <body>
 
@@ -21,13 +22,10 @@
         String updateQuery = "UPDATE service SET service_name = ?, service_description = ?, image = ?, price = ?, service_category_id = ? WHERE service_id = ?";
         
         try {
-            // Load JDBC Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Step 1: Establish connection using the DatabaseConnection class
+            Connection conn = DatabaseConnection.getConnection();
 
-            // Establish the connection
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/jad_ca1?user=root&password=gaeturtle696&serverTimezone=UTC");
-
-            // Prepare statement
+            // Step 2: Prepare the statement for updating the service data
             PreparedStatement stmt = conn.prepareStatement(updateQuery);
             stmt.setString(1, serviceName);
             stmt.setString(2, serviceDescription);
@@ -36,9 +34,10 @@
             stmt.setString(5, serviceCategoryId);
             stmt.setString(6, serviceId);
 
-            // Execute update
+            // Step 3: Execute the update statement
             int count = stmt.executeUpdate();
 
+            // Step 4: Provide feedback to the user
             if (count > 0) {
                 out.println("<h3>Service updated successfully!</h3>");
                 out.println("<p>Service ID: " + serviceId + "<br>Service Name: " + serviceName + "</p>");
@@ -46,7 +45,7 @@
                 out.println("<h3>No service was updated. Please check the service ID.</h3>");
             }
 
-            // Close connection
+            // Step 5: Close the connection
             conn.close();
         } catch (Exception e) {
             out.println("<h3>Error: " + e.getMessage() + "</h3>");
@@ -62,3 +61,4 @@
 
 </body>
 </html>
+
