@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Edit Service</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
+
 </head>
 <body>
 
@@ -15,13 +17,13 @@
             
         </tr>
         <tr>
-            <td>username:</td>
+            <td>username: </td>
             <td>
                 <input type="text" name="username"  />
             </td>
         </tr>
         <tr>
-            <td>password:</td>
+            <td>password: </td>
             <td>
                 <input type="text" name="password" />
             </td>

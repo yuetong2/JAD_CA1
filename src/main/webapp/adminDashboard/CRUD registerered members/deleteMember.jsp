@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Member</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
+    
 </head>
 <body>
 

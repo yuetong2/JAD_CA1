@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Edit Service</title>
+<link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
+
 </head>
 <body>
 
