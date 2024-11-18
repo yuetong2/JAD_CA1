@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Contact Us</title>
-<link rel="stylesheet" type="text/css" href="./CSS/contactUs.css">
+<link rel="stylesheet" type="text/css" href="../CSS/contactUs.css">
 <script src="./modalScript.js"></script> <!-- Link to external JavaScript file -->
 
 <!-- Link to external CSS -->

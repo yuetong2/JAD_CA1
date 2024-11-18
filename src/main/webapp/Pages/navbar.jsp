@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="./CSS/navbar.css">
+<link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
 
 <div class="navbar">
 	<!-- Logo on the left -->
 	<div class="logo">
-		<img src="./images/NA-removebg-preview.png" alt="Logo">
+		<img src="../images/NA-removebg-preview.png" alt="Logo">
 	</div>
 
 	<!-- Menu Dropdown -->

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Home Page</title>
-<link rel="stylesheet" type="text/css" href="./CSS/home.css">
+<link rel="stylesheet" type="text/css" href="../CSS/home.css">
 <script src="./modalScript.js"></script> <!-- Link to external JavaScript file -->
 
 </head>
