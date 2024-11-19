@@ -59,7 +59,7 @@
 
     } catch (Exception e) {
         out.println("<p>Exception occurred while processing the login.</p>");
-        e.printStackTrace(out);
+        e.printStackTrace();
     }
     %>
 </body>

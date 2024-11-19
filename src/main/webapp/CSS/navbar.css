@@ -1,3 +1,18 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    background-color: #BCF6FF;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+/* Logo Styling */
+.logo {
+    margin-right: 20px; /* Add some spacing between logo and menu */
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -18,13 +33,30 @@ body, html {
 	width: auto;
 }
 
+/* Menu container */
 .menu {
 	position: relative;
 	display: inline-block;
 	flex-grow: 0;
 }
 
+/* Menu button styling */
 .menu-btn {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 10px 15px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.menu-btn:hover {
+    background-color: #e0f7fa;
+    color: #00796b;
+    border-radius: 5px;
+
 	color: black;
 	padding: 5px 10px;
 	text-decoration: none;
@@ -34,7 +66,18 @@ body, html {
 	white-space: nowrap;
 }
 
+/* Dropdown styling */
 .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #BCF6FF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    padding: 0;
+    border-radius: 5px;
+
 	display: none;
 	position: absolute;
 	background-color: #BCF6FF;
@@ -44,7 +87,27 @@ body, html {
 	margin-top: 5px;
 }
 
+/* Dropdown items styling */
 .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dropdown item hover effect */
+.dropdown-content a:hover {
+    background-color: #e0f7fa;
+    color: #00796b;
+    border-radius: 5px;
+}
+
+/* Display dropdown content on hover */
+.menu:hover .dropdown-content {
+    display: block;
+
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
@@ -55,7 +118,24 @@ body, html {
 	position: relative;
 }
 
+/* Submenu styling */
 .submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Align submenu to the right */
+    top: 0;
+    background-color: #BCF6FF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* Show submenu on hover of parent dropdown */
+.dropdown-content .dropdown:hover .submenu-content {
+    display: block;
+
 	display: none;
 	position: absolute;
 	left: 100%;
@@ -72,7 +152,23 @@ body, html {
 	display: block;
 }
 
+/* Login button styling */
 .login-btn {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+    border: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    background: none;
+    margin-left: auto; /* Move login button to the far-right */
+    transition: color 0.3s;
+}
+
+.login-btn:hover {
+    color: #00796b;
+}
+
 	cursor: pointer;
 	color: black;
 	text-decoration: underline;
