@@ -1,52 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<link rel="stylesheet" type="text/css" href="../CSS/register.css">
-
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
-        <h2>Register</h2>
-        <form id="registerForm" action="../User/registerUser.jsp" method="POST" onsubmit="return validatePassword()">
-        	<div class="form-group">
-                <input type="text" name="username" placeholder="Username" required>
+<div class="modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal('registerModal')"></button>
             </div>
-            <div class="form-group password-container" >
-                <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="modal-body">
+                <!-- Form will now submit directly to registerUser.jsp -->
+                <form id="registerForm" action="../User/registerUser.jsp" method="POST">
+                    <div class="mb-3">
+                        <label for="registerUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="registerConfirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <p>Already have an account? <a href="javascript:void(0)" onclick="switchToLogin()">Click here to login</a></p>
+                </form>
             </div>
-            <div class="form-group password-container" >
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-            </div>
-            <div id="errorContainer" class="error-message"></div>
-            <button type="submit" class="submit-btn">Register</button>
-        </form>
-        <p>Have an account? <a href="#" onclick="switchToLogin()">Click here to login</a></p>
+        </div>
     </div>
 </div>
-
-<script>
-    function togglePasswordVisibility() {
-        const passwordField = document.getElementById("password");
-        const eyeIcon = document.getElementById("togglePassword");
-
-        if (passwordField.type === "password") {
-            passwordField.type = "text"; // Show password
-            eyeIcon.src = "../images/hide.png"; // Change to closed eye icon
-        } else {
-            passwordField.type = "password"; // Hide password
-            eyeIcon.src = "../images/show.png"; // Change to open eye icon
-        }
-    }
-
-    function toggleConfirmPasswordVisibility() {
-        const confirmPasswordField = document.getElementById("confirmPassword");
-        const eyeIcon = document.getElementById("toggleConfirmPassword");
-
-        if (confirmPasswordField.type === "password") {
-            confirmPasswordField.type = "text"; // Show password
-            eyeIcon.src = "../images/hide.png"; // Change to closed eye icon
-        } else {
-            confirmPasswordField.type = "password"; // Hide password
-            eyeIcon.src = "../images/show.png"; // Change to open eye icon
-        }
-    }
-</script>

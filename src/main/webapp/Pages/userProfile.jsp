@@ -2,45 +2,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>User Dashboard</title>
-
-<!-- Link to the external CSS file -->
-<link rel="stylesheet" type="text/css" href="../CSS/userProfile.css">
-<script src="../User/modal.js"></script> <!-- Link to external JavaScript file -->
-
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/userProfile.css">
 </head>
 <body>
-
-<%
-    // Set user_id to 1 directly
-    session.setAttribute("user_id", 1);
-    Integer userId = 1; // Hardcoded user_id for testing
-%>
-
 <%@ include file="navbar.jsp" %>
-
 <div class="container">
     <div class="sidebar">
         <h3>Menu</h3>
         <a href="javascript:void(0);" onclick="loadContent('account')">Account Details</a>
         <a href="javascript:void(0);" onclick="loadContent('bookingHistory')">Booking History</a>
     </div>
-
     <div class="main-content">
-        <div class="content-box" id="content-area">
-            <!-- Dynamic content will be loaded here -->
-        </div>
+        <div class="content-box" id="content-area"></div>
     </div>
 </div>
 
-</body>
 <script>
     function loadContent(contentType) {
         const contentArea = document.getElementById('content-area');
 
         if (contentType === 'account') {
-            // Fetch user account details from the server and update content dynamically
             fetch('../User/getUserDetails.jsp')
                 .then(response => response.text())
                 .then(data => {
@@ -57,7 +40,46 @@
     }
 
     window.onload = function() {
-        loadContent('account'); // Default to account details on page load
+        loadContent('account');
+    };
+
+    function updateField(field, newValue) {
+        fetch('../User/updateUser.jsp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'field=' + encodeURIComponent(field) + '&value=' + encodeURIComponent(newValue)
+        })
+        .then(response => response.text())
+        .then(message => {
+            alert(message);
+        })
+        .catch(error => {
+            alert('Error updating ' + field);
+        });
     }
+
+    function toggleEdit(field) {
+        const displaySpan = document.getElementById(field + '-display');
+        const editSpan = document.getElementById(field + '-edit');
+        const editButton = document.getElementById(field + '-edit-btn');
+
+        if (editSpan.style.display === 'none') {
+            // Switch to edit mode
+            displaySpan.style.display = 'none';
+            editSpan.style.display = 'inline';
+            editButton.textContent = 'Save';
+        } else {
+            // Save changes and switch back to display mode
+            const newValue = document.getElementById(field + '-input').value;
+            updateField(field, newValue);
+
+            displaySpan.textContent = newValue; // Update display with new value
+            displaySpan.style.display = 'inline';
+            editSpan.style.display = 'none';
+            editButton.textContent = 'Edit';
+        }
+    }
+
 </script>
+</body>
 </html>

@@ -5,6 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Register User</title>
+    <script>
+        function showSuccessAndRedirect() {
+            alert("User registered successfully! Redirecting to the home page...");
+            window.location.href = "../Home/home.jsp";
+        }
+
+        function showErrorAndRedirect(message) {
+            alert(message);
+            window.location.href = "../User/register.jsp"; // Redirect to the register page
+        }
+    </script>
 </head>
 <body>
 <%
@@ -12,7 +23,7 @@
     String password = request.getParameter("password");
 
     if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
-        out.println("<p>All fields are required. Please fill out the form completely.</p>");
+        out.println("<script>showErrorAndRedirect('All fields are required. Please fill out the form completely.');</script>");
     } else {
         try {
             // Load JDBC driver
@@ -33,7 +44,7 @@
 
             if (checkRs.next()) {
                 // Username already exists
-                out.println("<p>Username already exists. Please choose a different username.</p>");
+                out.println("<script>showErrorAndRedirect('Username already exists. Please choose a different username.');</script>");
             } else {
                 // Insert new user
                 String insertSql = "INSERT INTO User (username, password, role_id, created_on, updated_on) VALUES (?, ?, 1, NOW(), NOW())";
@@ -44,10 +55,12 @@
                 int rowsInserted = insertStmt.executeUpdate();
 
                 if (rowsInserted > 0) {
-                    out.println("<p>User registered successfully with default role!</p>");
+                    out.println("<script>showSuccessAndRedirect();</script>");
                 } else {
-                    out.println("<p>Failed to register user. Please try again.</p>");
+                    out.println("<script>showErrorAndRedirect('Failed to register user. Please try again.');</script>");
                 }
+
+                insertStmt.close();
             }
 
             // Close resources
@@ -56,7 +69,7 @@
             conn.close();
 
         } catch (Exception e) {
-            out.println("<p>Exception occurred during registration: " + e.getMessage() + "</p>");
+            out.println("<script>showErrorAndRedirect('Exception occurred during registration: " + e.getMessage().replaceAll("'", "\\\\'") + "');</script>");
             e.printStackTrace(); // Logs to server logs
         }
     }
