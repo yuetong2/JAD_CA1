@@ -12,18 +12,32 @@
 /* Logo Styling */
 .logo {
     margin-right: 20px; /* Add some spacing between logo and menu */
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #BCF6FF;
+	padding: 10px 20px;
+	width: 100%;
 }
 
 .logo img {
-    height: 5em;
-    width: auto;
+	height: 5em;
+	width: auto;
 }
 
 /* Menu container */
 .menu {
-    position: relative;
-    display: inline-block;
-    flex-grow: 0;
+	position: relative;
+	display: inline-block;
+	flex-grow: 0;
 }
 
 /* Menu button styling */
@@ -42,6 +56,14 @@
     background-color: #e0f7fa;
     color: #00796b;
     border-radius: 5px;
+
+	color: black;
+	padding: 5px 10px;
+	text-decoration: none;
+	font-size: 17px;
+	cursor: pointer;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 /* Dropdown styling */
@@ -55,6 +77,14 @@
     margin-top: 5px;
     padding: 0;
     border-radius: 5px;
+
+	display: none;
+	position: absolute;
+	background-color: #BCF6FF;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	margin-top: 5px;
 }
 
 /* Dropdown items styling */
@@ -77,6 +107,15 @@
 /* Display dropdown content on hover */
 .menu:hover .dropdown-content {
     display: block;
+
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-submenu {
+	position: relative;
 }
 
 /* Submenu styling */
@@ -96,6 +135,21 @@
 /* Show submenu on hover of parent dropdown */
 .dropdown-content .dropdown:hover .submenu-content {
     display: block;
+
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	background-color: #BCF6FF;
+	min-width: 160px;
+}
+
+.dropdown-submenu:hover .submenu-content {
+	display: block;
+}
+
+.menu-btn:hover+.dropdown-content {
+	display: block;
 }
 
 /* Login button styling */
@@ -113,4 +167,16 @@
 
 .login-btn:hover {
     color: #00796b;
+}
+
+	cursor: pointer;
+	color: black;
+	text-decoration: underline;
+	border: none;
+	padding: 10px 15px;
+	font-size: 17px;
+}
+
+.navbar>.menu {
+	flex-grow: 1;
 }

@@ -1,16 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="dbConnection.DatabaseConnection" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dbConnection.DatabaseConnection"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="../../CSS/styleDashboard.css">
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" type="text/css"
+	href="../../CSS/styleDashboard.css">
 
 </head>
 <body>
-<%
+	<%
     // Pagination and search parameters
     int recordsPerPage = 5;
     int currentPage = 1;
@@ -57,35 +59,35 @@
         
         rs = pstmt.executeQuery();
 %>
-<div class ="main">
-<div class="add-service-form" style ="float:left">
-    <form action="addServiceForm.jsp" method="get">
-        <input type="submit" class="add-service-btn" value="Add New Service" />
-    </form>
-</div>
+	<div class="main">
+		<div class="add-service-form" style="float: left">
+			<form action="addServiceForm.jsp" method="get">
+				<input type="submit" class="add-service-btn" value="Add New Service" />
+			</form>
+		</div>
 
-<!-- Search Form -->
-<div class="search-container" style ="float:left">
-    <form action="" method="get">
-        <input type="text" name="search" placeholder="Search services" value="<%= searchTerm %>" />
-        <input type="submit" value="Search" />
-    </form>
-</div>
+		<!-- Search Form -->
+		<div class="search-container" style="float: left">
+			<form action="" method="get">
+				<input type="text" name="search" placeholder="Search services"
+					value="<%= searchTerm %>" /> <input type="submit" value="Search" />
+			</form>
+		</div>
 
 
-    
-<div class="table-container" >
-    <table border="1" class="center">
-        <tr>
-            <th>Service ID</th>
-            <th>Service Name</th>
-            <th>Service Description</th>
-            <th>Image</th>
-            <th>Price</th>
-            <th>Service Category ID</th>
-            <th>Actions</th>
-        </tr>
-        <% 
+
+		<div class="table-container">
+			<table border="1" class="center">
+				<tr>
+					<th>Service ID</th>
+					<th>Service Name</th>
+					<th>Service Description</th>
+					<th>Image</th>
+					<th>Price</th>
+					<th>Service Category ID</th>
+					<th>Actions</th>
+				</tr>
+				<% 
         while (rs.next()) {
             int serviceId = rs.getInt("service_id");
             String serviceName = rs.getString("service_name");
@@ -94,59 +96,63 @@
             double price = rs.getDouble("price");
             int serviceCategoryId = rs.getInt("service_category_id");
         %>
-        <tr>
-            <td><%= serviceId %></td>
-            <td><%= serviceName %></td>
-            <td><%= serviceDescription %></td>
-            <td><%= image %></td>
-            <td><%= price %></td>
-            <td><%= serviceCategoryId %></td>
-            <td>
-                <form action="editServiceForm.jsp" method="post" style="display: inline;">
-                    <input type="hidden" name="serviceId" value="<%= serviceId %>" />
-                    <input type="hidden" name="serviceName" value="<%= serviceName %>" />
-                    <input type="hidden" name="serviceDescription" value="<%= serviceDescription %>" />
-                    <input type="hidden" name="image" value="<%= image %>" />
-                    <input type="hidden" name="price" value="<%= price %>" />
-                    <input type="hidden" name="serviceCategoryId" value="<%= serviceCategoryId %>" />
-                    <input type="submit" value="Edit" class="edit-btn"/>
-                </form>
-                <form action="deleteService.jsp" method="post" style="display: inline;">
-                    <input type="hidden" name="serviceId" value="<%= serviceId %>" />
-                    <input type="submit" value="Delete" class="delete-btn"/>
-                </form>
-            </td>
-        </tr>
-        <% } %>
-    </table>
-    <!-- Pagination Controls -->
-    <div class="pagination">
-        <% 
+				<tr>
+					<td><%= serviceId %></td>
+					<td><%= serviceName %></td>
+					<td><%= serviceDescription %></td>
+					<td><%= image %></td>
+					<td><%= price %></td>
+					<td><%= serviceCategoryId %></td>
+					<td>
+						<form action="editServiceForm.jsp" method="post"
+							style="display: inline;">
+							<input type="hidden" name="serviceId" value="<%= serviceId %>" />
+							<input type="hidden" name="serviceName"
+								value="<%= serviceName %>" /> <input type="hidden"
+								name="serviceDescription" value="<%= serviceDescription %>" />
+							<input type="hidden" name="image" value="<%= image %>" /> <input
+								type="hidden" name="price" value="<%= price %>" /> <input
+								type="hidden" name="serviceCategoryId"
+								value="<%= serviceCategoryId %>" /> <input type="submit"
+								value="Edit" class="edit-btn" />
+						</form>
+						<form action="deleteService.jsp" method="post"
+							style="display: inline;">
+							<input type="hidden" name="serviceId" value="<%= serviceId %>" />
+							<input type="submit" value="Delete" class="delete-btn" />
+						</form>
+					</td>
+				</tr>
+				<% } %>
+			</table>
+			<!-- Pagination Controls -->
+			<div class="pagination">
+				<% 
         // Previous page link
         if (currentPage > 1) { 
         %>
-            <a href="?page=<%= currentPage - 1 %>&search=<%= searchTerm %>">Previous</a>
-        <% 
+				<a href="?page=<%= currentPage - 1 %>&search=<%= searchTerm %>">Previous</a>
+				<% 
         } 
         
         // Page numbers
         for (int i = 1; i <= totalPages; i++) { 
         %>
-            <a href="?page=<%= i %>&search=<%= searchTerm %>"
-               <%= (i == currentPage) ? "style='font-weight: bold;'" : "" %>>
-                <%= i %>
-            </a>
-        <% } 
+				<a href="?page=<%= i %>&search=<%= searchTerm %>"
+					<%= (i == currentPage) ? "style='font-weight: bold;'" : "" %>>
+					<%= i %>
+				</a>
+				<% } 
         
         // Next page link
         if (currentPage < totalPages) { 
         %>
-            <a href="?page=<%= currentPage + 1 %>&search=<%= searchTerm %>">Next</a>
-        <% } %>
-    </div>
-    </div>
-    </div>
-<%
+				<a href="?page=<%= currentPage + 1 %>&search=<%= searchTerm %>">Next</a>
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<%
     } catch (Exception e) {
         out.println("Error: " + e.getMessage());
     } finally {

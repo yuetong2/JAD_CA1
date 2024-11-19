@@ -1,43 +1,49 @@
-    body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card {
-            background-color: #b8ecf2;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-        }
-        .card h2 {
-            margin: 0 0 10px;
-            font-size: 20px;
-            color: #333;
-        }
-        .card p {
-            margin: 5px 0;
-            color: #666;
-        }
-        .card .rating {
-            font-size: 25px;
-            color: #ff9800; /* Orange color for stars */
-        }
-        .card .star {
-            font-size: 50px;
-            color: #ffcd42;
-        }
-        h1{
-        	text-align: center;
-        	  color: blue;
-        	
-        }
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f9;
+	margin: 0;
+	padding: 20px;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+
+.card {
+	background-color: #b8ecf2;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 300px;
+	text-align: center;
+}
+
+.card h2 {
+	margin: 0 0 10px;
+	font-size: 20px;
+	color: #333;
+}
+
+.card p {
+	margin: 5px 0;
+	color: #666;
+}
+
+.card .rating {
+	font-size: 25px;
+	color: #ff9800; /* Orange color for stars */
+}
+
+.card .star {
+	font-size: 50px;
+	color: #ffcd42;
+}
+
+h1 {
+	text-align: center;
+	color: blue;
+}
