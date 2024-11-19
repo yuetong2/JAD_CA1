@@ -5,14 +5,14 @@
 <meta charset="UTF-8">
 <title>Home Page</title>
 <link rel="stylesheet" type="text/css" href="../CSS/home.css">
-<script src="./modalScript.js"></script> <!-- Link to external JavaScript file -->
+<script src="../User/modal.js"></script> <!-- Link to external JavaScript file -->
 
 </head>
 <body>
 
-    <%@ include file="navbar.jsp" %> <!-- Include the navbar -->
-    <%@ include file="loginModal.jsp" %> <!-- Include the login modal -->
-    <%@ include file="registerModal.jsp" %> <!-- Include the register modal -->
+    <%@ include file="../Pages/navbar.jsp" %> <!-- Include the navbar -->
+    <%@ include file="../User/loginModal.jsp" %> <!-- Include the login modal -->
+    <%@ include file="../User/registerModal.jsp" %> <!-- Include the register modal -->
 
     <script>
         function openLoginModal() {

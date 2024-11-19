@@ -1,8 +1,22 @@
 @charset "UTF-8";
 
 .error-message {
-        color: red;
-        font-size: 14px;
-        margin: 10px 0;
-        text-align: center;
-    }
+	color: red;
+	font-size: 14px;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; 
+    box-sizing: border-box;
+}
+
+
