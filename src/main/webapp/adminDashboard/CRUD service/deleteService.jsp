@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-    
+<%@ page import="dbConnection.DatabaseConnection" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Delete Service</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
+    
 </head>
 <body>
 
@@ -17,19 +19,17 @@
         String deleteQuery = "DELETE FROM service WHERE service_id = ?";
 
         try {
-            // Load JDBC Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Step 1: Establish connection using the DatabaseConnection class
+            Connection conn = DatabaseConnection.getConnection();
 
-            // Establish the connection
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/jad_ca1?user=root&password=gaeturtle696&serverTimezone=UTC");
-
-            // Prepare statement
+            // Step 2: Prepare the delete statement
             PreparedStatement stmt = conn.prepareStatement(deleteQuery);
             stmt.setString(1, serviceId);
 
-            // Execute delete
+            // Step 3: Execute the delete statement
             int count = stmt.executeUpdate();
 
+            // Step 4: Provide feedback to the user
             if (count > 0) {
                 out.println("<h3>Service deleted successfully!</h3>");
                 out.println("<p>Service ID: " + serviceId + "</p>");
@@ -37,7 +37,7 @@
                 out.println("<h3>No service was deleted. Please check the service ID.</h3>");
             }
 
-            // Close connection
+            // Step 5: Close the connection
             conn.close();
         } catch (Exception e) {
             out.println("<h3>Error: " + e.getMessage() + "</h3>");

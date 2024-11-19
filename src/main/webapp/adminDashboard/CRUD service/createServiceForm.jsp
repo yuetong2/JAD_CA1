@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@ page import="java.sql.*" %>
+<%@ page import="dbConnection.DatabaseConnection" %>
 
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Create New Service</title>
+    <meta charset="UTF-8">
+    <title>Create New Service</title>
 </head>
 <body>
 
@@ -19,15 +20,12 @@
 
     if (serviceName != null && serviceDescription != null && price != null && serviceCategoryId != null) {
         String insertQuery = "INSERT INTO service (service_name, service_description, image, price, service_category_id) VALUES (?, ?, ?, ?, ?)";
-        
+
         try {
-            // Load JDBC Driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Step 1: Establish connection using the DatabaseConnection class
+            Connection conn = DatabaseConnection.getConnection();
 
-            // Establish the connection
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/jad_ca1?user=root&password=gaeturtle696&serverTimezone=UTC");
-
-            // Prepare statement
+            // Step 2: Prepare statement for inserting service data
             PreparedStatement stmt = conn.prepareStatement(insertQuery);
             stmt.setString(1, serviceName);
             stmt.setString(2, serviceDescription);
@@ -35,9 +33,10 @@
             stmt.setString(4, price);
             stmt.setString(5, serviceCategoryId);
 
-            // Execute insert
+            // Step 3: Execute the insert statement
             int count = stmt.executeUpdate();
 
+            // Step 4: Provide feedback to the user
             if (count > 0) {
                 out.println("<h3>New Service Created Successfully!</h3>");
                 out.println("<p>Service Name: " + serviceName + "<br>Service Description: " + serviceDescription + "</p>");
@@ -45,7 +44,7 @@
                 out.println("<h3>Failed to create new service. Please check the input data.</h3>");
             }
 
-            // Close connection
+            // Step 5: Close the connection
             conn.close();
         } catch (Exception e) {
             out.println("<h3>Error: " + e.getMessage() + "</h3>");
@@ -55,11 +54,11 @@
     }
 %>
 
-
 <form action="listServiceForCRUD.jsp" method="get">
     <input type="submit" value="Back to List Services" />
 </form>
 
 </body>
 </html>
+
 

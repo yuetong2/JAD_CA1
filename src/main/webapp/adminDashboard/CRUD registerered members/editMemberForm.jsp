@@ -1,43 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Service</title>
+<title>Edit Service</title>
 <link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
 
 </head>
 <body>
 
+<%
+String userId = request.getParameter("userId");
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+%>
+<h2 align="center">Edit Member Form</h2>
 
-<h2 align="center">Add Service Form</h2>
-
-<form action="createServiceForm.jsp" method="post">
+<form action="updateMemberForm.jsp" method="post">
     <table class="center">
-        
         <tr>
-            <td>Service Name:</td>
+            <td>Id:</td>
             <td>
-                <input type="text" name="serviceName" " />
+                <input type="text" name="userId" value="<%= userId %>" readonly />
             </td>
         </tr>
         <tr>
-            <td>Service Description:</td>
+            <td>username:</td>
             <td>
-                <textarea name="serviceDescription" rows="4" cols="50"></textarea>
+                <input type="text" name="username" value="<%= username %>" />
             </td>
         </tr>
         <tr>
-            <td>Price:</td>
+            <td>password:</td>
             <td>
-                <input type="text" name="price" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>Service Category Id:</td>
-            <td>
-                <input type="text" name="serviceCategoryId" value="" />
+                <input type="text" name="password" value="<%= password %>" />
             </td>
         </tr>
         <tr>
