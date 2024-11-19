@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="../CSS/navbar.css">
 
 <div class="navbar">
@@ -16,15 +15,17 @@
 			<div class="dropdown-submenu">
 				<a href="#">Type of Services</a>
 				<div class="submenu-content">
-					<a href="#">Service 1</a> <a href="#">Service 2</a> <a href="#">Service
-						3</a>
+					<a href="#">Service 1</a>
+					<a href="#">Service 2</a>
+					<a href="#">Service 3</a>
 				</div>
 			</div>
-			<a href="#">Reviews</a> <a href="#">Contact Us</a> <a href="#">FAQ</a>
-			<a href="#">Leave Review</a>
+			<a href="#">Reviews</a>
+			<a href="#">Contact Us</a>
+			<a href="#">FAQ</a>
+			<a href="../Pages/userProfile">Profile</a>
 		</div>
 	</div>
 
-	<!-- Login Button on the right -->
-	<button class="login-btn" onclick="openLoginModal()">Login</button>
+	<!-- Dynamic login/logout or user information -->
 </div>

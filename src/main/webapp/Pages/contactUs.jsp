@@ -6,16 +6,20 @@
 <meta charset="UTF-8">
 <title>Contact Us</title>
 <link rel="stylesheet" type="text/css" href="../CSS/contactUs.css">
+<<<<<<< HEAD
 <script src="./modalScript.js"></script>
 <!-- Link to external JavaScript file -->
+=======
+<script src="./modalScript.js"></script> 
+>>>>>>> branch 'master' of https://github.com/yuetong2/JAD_CA1
 
 <!-- Link to external CSS -->
 </head>
 <body>
 
-	<%@ include file="navbar.jsp"%>
-	<%@ include file="loginModal.jsp"%>
-	<%@ include file="registerModal.jsp"%>
+	<%@ include file="../Pages/navbar.jsp" %> 
+    <%@ include file="../User/loginModal.jsp" %> 
+    <%@ include file="../User/registerModal.jsp" %> 
 
 	<div class="social-icons">
 		<!-- Instagram Icon -->
