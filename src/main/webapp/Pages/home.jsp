@@ -1,20 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Home Page</title>
 <link rel="stylesheet" type="text/css" href="../CSS/home.css">
-<script src="./modalScript.js"></script> <!-- Link to external JavaScript file -->
+<script src="./modalScript.js"></script>
+<!-- Link to external JavaScript file -->
 
 </head>
 <body>
 
-    <%@ include file="navbar.jsp" %> <!-- Include the navbar -->
-    <%@ include file="loginModal.jsp" %> <!-- Include the login modal -->
-    <%@ include file="registerModal.jsp" %> <!-- Include the register modal -->
+	<%@ include file="navbar.jsp"%>
+	<!-- Include the navbar -->
+	<%@ include file="loginModal.jsp"%>
+	<!-- Include the login modal -->
+	<%@ include file="registerModal.jsp"%>
+	<!-- Include the register modal -->
 
-    <script>
+	<script>
         function openLoginModal() {
             document.getElementById("loginModal").style.display = "block";
             document.getElementById("loginForm").reset();

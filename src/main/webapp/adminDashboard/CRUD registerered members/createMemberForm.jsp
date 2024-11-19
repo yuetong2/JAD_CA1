@@ -1,16 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="dbConnection.DatabaseConnection" %> <!-- Import DatabaseConnection class -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dbConnection.DatabaseConnection"%>
+<!-- Import DatabaseConnection class -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Create Member</title>
+<meta charset="UTF-8">
+<title>Create Member</title>
 </head>
 <body>
 
-<%
+	<%
     // Retrieve parameters from the request
     String username = request.getParameter("username");
 	String password = request.getParameter("password");
@@ -50,9 +52,9 @@
     }
 %>
 
-<form action="listMemberForCRUD.jsp" method="get">
-    <input type="submit" value="Back to List Members" />
-</form>
+	<form action="listMemberForCRUD.jsp" method="get">
+		<input type="submit" value="Back to List Members" />
+	</form>
 
 </body>
 </html>

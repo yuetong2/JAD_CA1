@@ -1,18 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="dbConnection.DatabaseConnection" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dbConnection.DatabaseConnection"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Delete Service</title>
-    <link rel="stylesheet" type="text/css" href="../../CSS/dashboardForm.css">
-    
+<meta charset="UTF-8">
+<title>Delete Service</title>
+<link rel="stylesheet" type="text/css"
+	href="../../CSS/dashboardForm.css">
+
 </head>
 <body>
 
-<%
+	<%
     String serviceId = request.getParameter("serviceId");
 
     if (serviceId != null) {
@@ -47,9 +49,9 @@
     }
 %>
 
-<form action="listServiceForCRUD.jsp" method="get">
-    <input type="submit" value="Back to List Services" />
-</form>
+	<form action="listServiceForCRUD.jsp" method="get">
+		<input type="submit" value="Back to List Services" />
+	</form>
 
 </body>
 </html>

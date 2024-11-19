@@ -1,86 +1,86 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #BCF6FF;
-    padding: 10px 20px;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #BCF6FF;
+	padding: 10px 20px;
+	width: 100%;
 }
 
 .logo img {
-    height: 5em;
-    width: auto;
+	height: 5em;
+	width: auto;
 }
 
 .menu {
-    position: relative;
-    display: inline-block;
-    flex-grow: 0;
+	position: relative;
+	display: inline-block;
+	flex-grow: 0;
 }
 
 .menu-btn {
-    color: black;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-size: 17px;
-    cursor: pointer;
-    display: inline-block;
-    white-space: nowrap;
+	color: black;
+	padding: 5px 10px;
+	text-decoration: none;
+	font-size: 17px;
+	cursor: pointer;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #BCF6FF;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 5px;
+	display: none;
+	position: absolute;
+	background-color: #BCF6FF;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	margin-top: 5px;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 .dropdown-submenu {
-    position: relative;
+	position: relative;
 }
 
 .submenu-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #BCF6FF;
-    min-width: 160px;
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	background-color: #BCF6FF;
+	min-width: 160px;
 }
 
 .dropdown-submenu:hover .submenu-content {
-    display: block;
+	display: block;
 }
 
-.menu-btn:hover + .dropdown-content {
-    display: block;
+.menu-btn:hover+.dropdown-content {
+	display: block;
 }
 
 .login-btn {
-    cursor: pointer;
-    color: black;
-    text-decoration: underline;
-    border: none;
-    padding: 10px 15px;
-    font-size: 17px;
+	cursor: pointer;
+	color: black;
+	text-decoration: underline;
+	border: none;
+	padding: 10px 15px;
+	font-size: 17px;
 }
 
-.navbar > .menu {
-    flex-grow: 1;
+.navbar>.menu {
+	flex-grow: 1;
 }

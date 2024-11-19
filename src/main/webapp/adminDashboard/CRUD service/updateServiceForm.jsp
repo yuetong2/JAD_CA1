@@ -1,16 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="dbConnection.DatabaseConnection" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dbConnection.DatabaseConnection"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Update Service</title>
+<meta charset="UTF-8">
+<title>Update Service</title>
 </head>
 <body>
 
-<%
+	<%
     String serviceId = request.getParameter("serviceId");
     String serviceName = request.getParameter("serviceName");
     String serviceDescription = request.getParameter("serviceDescription");
@@ -55,9 +56,9 @@
     }
 %>
 
-<form action="listServiceForCRUD.jsp" method="get">
-    <input type="submit" value="Back to List Services" />
-</form>
+	<form action="listServiceForCRUD.jsp" method="get">
+		<input type="submit" value="Back to List Services" />
+	</form>
 
 </body>
 </html>

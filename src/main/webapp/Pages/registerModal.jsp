@@ -1,28 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" type="text/css" href="../CSS/register.css">
 
 <div id="registerModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
-        <h2>Register</h2>
-        <form id="registerForm" action="./registerUser.jsp" method="POST" onsubmit="return validatePassword()">
-            <div class="form-group">
-                <input type="text" name="username" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <i class="eye-icon" id="togglePassword" onclick="togglePasswordVisibility()">👁️</i> <!-- Eye icon -->
-            </div>
-            <div class="form-group">
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-                <i class="eye-icon" id="toggleConfirmPassword" onclick="toggleConfirmPasswordVisibility()">👁️</i> <!-- Eye icon -->
-            </div>
-            <div id="errorContainer" class="error-message"></div> <!-- Error message container -->
-            <button type="submit" class="submit-btn">Register</button>
-        </form>
-        <p>Have an account? <a href="#" onclick="switchToLogin()">Click here to login</a></p>
-    </div>
+	<div class="modal-content">
+		<span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
+		<h2>Register</h2>
+		<form id="registerForm" action="./registerUser.jsp" method="POST"
+			onsubmit="return validatePassword()">
+			<div class="form-group">
+				<input type="text" name="username" placeholder="Username" required>
+			</div>
+			<div class="form-group">
+				<input type="password" id="password" name="password"
+					placeholder="Password" required> <i class="eye-icon"
+					id="togglePassword" onclick="togglePasswordVisibility()">👁️</i>
+				<!-- Eye icon -->
+			</div>
+			<div class="form-group">
+				<input type="password" id="confirmPassword" name="confirmPassword"
+					placeholder="Confirm Password" required> <i
+					class="eye-icon" id="toggleConfirmPassword"
+					onclick="toggleConfirmPasswordVisibility()">👁️</i>
+				<!-- Eye icon -->
+			</div>
+			<div id="errorContainer" class="error-message"></div>
+			<!-- Error message container -->
+			<button type="submit" class="submit-btn">Register</button>
+		</form>
+		<p>
+			Have an account? <a href="#" onclick="switchToLogin()">Click here
+				to login</a>
+		</p>
+	</div>
 </div>
 
 <script>
