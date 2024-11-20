@@ -1,46 +1,72 @@
 @charset "UTF-8";
 
+/* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
 }
 
 .social-icons img {
     width: 80px;
     height: 80px;
     margin: 0 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
 .social-icons img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Slight zoom-in effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
+/* Contact Form Styling */
 .contact-form {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the form */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    width: 100%;
+    max-width: 600px; /* Max width for large screens */
+    margin: 0 auto;
 }
 
+/* Heading Styling */
 .contact-form h2 {
+    color: #333; /* Dark color for the heading */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Label Styling */
+.form-group label {
+    font-weight: bold;
     color: #333;
 }
 
-.form-group label {
-    font-weight: bold;
-}
-
+/* Submit Button Styling */
 .submit-btn {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green button color */
     color: white;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    padding: 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effects */
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
-    transform: scale(1.02);
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.02); /* Slight zoom-in effect on hover */
 }
