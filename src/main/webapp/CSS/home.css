@@ -145,3 +145,12 @@ footer {
 .submit-btn:hover {
     background-color: #555;
 }
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+background-color: black;  /* Sets background to black */
+    fill: #0080ff;  /* Changes the icon color to white */
+    }
+
+

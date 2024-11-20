@@ -17,9 +17,15 @@
     <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
         <!-- Social Icons -->
         <div class="social-icons d-flex justify-content-center mb-4">
-            <img src="../images/instagram.png" alt="Instagram" class="icon">
-            <img src="../images/gmail.png" alt="Gmail" class="icon">
-            <img src="../images/facebook.png" alt="Facebook" class="icon">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="../images/instagram.png" alt="Instagram" class="icon">
+            </a>
+            <a href="mailto:your-email@example.com" target="_blank">
+                <img src="../images/gmail.png" alt="Gmail" class="icon">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="../images/facebook.png" alt="Facebook" class="icon">
+            </a>
         </div>
 
         <!-- Contact Form -->
@@ -59,6 +65,7 @@
         session.removeAttribute("successMessage");
         }
     %>
+    <jsp:include page="footer.html" />
 
 </body>
 </html>
