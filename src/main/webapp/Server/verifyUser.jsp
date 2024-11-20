@@ -1,19 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
 </head>
-<%@page import="java.util.*,java.time.*"%>
-<%--
-  - Author(s): Angie Wu
-  - Date: 15/11/2024
-  - Description: Practical 5 answers
---%>
 <body>
     <%
     String username = request.getParameter("username");
@@ -48,15 +41,15 @@
             session.setAttribute("userRole", roleId);
 
             // Redirect to the home page or dashboard
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("../Pages/home.jsp");
         } else {
-            // No matching record found, redirect back to login page with error
-            response.sendRedirect("home.jsp?errCode=invalidLogin");
+            // No matching record found, redirect back to home page without errCode
+            session.setAttribute("loginError", "Invalid login credentials.");
+            response.sendRedirect("../Pages/home.jsp");
         }
 
         // Close the connection
         conn.close();
-
     } catch (Exception e) {
         out.println("<p>Exception occurred while processing the login.</p>");
         e.printStackTrace();

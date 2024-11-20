@@ -1,5 +1,9 @@
+@charset "UTF-8";
+
 /* General Page Styles */
-body {
+body, html {
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
 }
 
@@ -45,82 +49,99 @@ section {
 }
 
 /* Contact Section */
-form input, form textarea {
+form input,
+form textarea {
+    width: 100%;
     border-radius: 10px;
     border: 1px solid #ddd;
     padding: 15px;
     font-size: 1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 form button {
     border-radius: 10px;
     padding: 15px 30px;
     font-size: 1.1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
 }
 
 /* Footer */
 footer {
     background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
 
-@charset "UTF-8";
-
-body, html {
-	margin: 0;
-	padding: 0;
-	font-family: Arial, sans-serif;
-}
-
-/* Modal styling */
+/* Modal Styling */
 .modal {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-	background-color: white;
-	margin: 15% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 300px;
-	text-align: center;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .close-btn {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.close-btn:hover, .close-btn:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
 }
 
 .form-group {
-	margin: 10px 0;
+    margin: 10px 0;
 }
 
 .form-group input {
-	width: 100%;
-	padding: 8px;
-	margin: 5px 0;
-	box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .submit-btn {
-	padding: 10px 20px;
-	background-color: #333;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-	font-size: 16px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #555;
 }
