@@ -2,6 +2,7 @@
 
 // Function to open the login modal
 function openLoginModal() {
+	alert("Login Modal Opened!");
     const modal = document.getElementById("loginModal");
     if (modal) {
         modal.style.display = "block"; // Show the login modal

@@ -1,38 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Contact Us</title>
-<link rel="stylesheet" type="text/css" href="../CSS/contactUs.css">
-<<<<<<< HEAD
-<script src="./modalScript.js"></script>
 <!-- Link to external JavaScript file -->
-=======
-<script src="./modalScript.js"></script> 
->>>>>>> branch 'master' of https://github.com/yuetong2/JAD_CA1
+<link rel="stylesheet" type="text/css" href="../CSS/contactUs.css">
 
 <!-- Link to external CSS -->
 </head>
 <body>
 
 	<%@ include file="../Pages/navbar.jsp" %> 
-    <%@ include file="../User/loginModal.jsp" %> 
-    <%@ include file="../User/registerModal.jsp" %> 
+
 
 	<div class="social-icons">
 		<!-- Instagram Icon -->
 		<a href="https://www.instagram.com" target="_blank"> <img
-			src="path/to/instagram-icon.png" alt="Instagram" class="icon">
+			src="/images/instagram.png" alt="Instagram" class="icon">
 		</a>
 		<!-- Gmail Icon -->
 		<a href="mailto:your-email@gmail.com"> <img
-			src="path/to/gmail-icon.png" alt="Gmail" class="icon">
+			src="/images/gmail.png" alt="Gmail" class="icon">
 		</a>
 		<!-- Facebook Icon -->
 		<a href="https://www.facebook.com" target="_blank"> <img
-			src="path/to/facebook-icon.png" alt="Facebook" class="icon">
+			src="/images/facebook.png" alt="Facebook" class="icon">
 		</a>
 	</div>
 
