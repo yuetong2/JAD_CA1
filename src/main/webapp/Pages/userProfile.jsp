@@ -81,5 +81,9 @@
     }
 
 </script>
+
+
+    <jsp:include page="footer.html" />
+
 </body>
 </html>

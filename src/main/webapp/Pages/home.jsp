@@ -49,13 +49,18 @@
                                 String serviceDescription = rs.getString("service_description");
                                 String image = rs.getString("image");
                                 double price = rs.getDouble("price");
+
+                                // Set the default image if the image is null or empty
+                                if (image == null || image.isEmpty()) {
+                                    image = "defaultImage.png"; // Default image path
+                                }
                     %>
                             <!-- Service Item -->
                             <div class="carousel-item <%= isFirstItem ? "active" : "" %>">
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <div class="card shadow">
-                                            <img src="<%= image %>" class="card-img-top" alt="<%= serviceName %>">
+                                            <img src="../images/<%= image %>.png" class="card-img-top" alt="<%= serviceName %>">
                                             <div class="card-body">
                                                 <h5 class="card-title"><%= serviceName %></h5>
                                                 <p class="card-text"><%= serviceDescription %></p>
@@ -130,10 +135,8 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-    </footer>
+    <jsp:include page="footer.html" />
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -62,5 +62,7 @@
 <h1><%= responseMessage %></h1>
 <a href="leaveAReview.jsp">Back to Review Page</a>
 
+    <jsp:include page="footer.html" />
+
 </body>
 </html>
